@@ -1,0 +1,3 @@
+email,password,first_name,last_name,gender,birth_month,birth_day,birth_year,zip_code,looking_for,about_me
+user1@mailinator.com,Pass1234!,John,Smith,male,05,15,1990,10001,women,Love to travel
+user2@mailinator.com,Pass5678!,Jane,Doe,female,08,22,1992,90001,men,Foodie looking for my dining partner

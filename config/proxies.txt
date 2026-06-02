@@ -1,0 +1,8 @@
+# Proxy format (one per line):
+#   host:port
+#   host:port:username:password
+#
+# Examples:
+# 123.45.67.89:8080
+# 98.76.54.32:3128:user1:pass1
+# socks5://111.222.333.444:1080
