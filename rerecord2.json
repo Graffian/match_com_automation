@@ -1,0 +1,497 @@
+{
+  "version": 1,
+  "resolution": {
+    "width": 540,
+    "height": 960
+  },
+  "screenshots": [
+    {
+      "file": "37.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 285,
+          "y": 552
+        }
+      ]
+    },
+    {
+      "file": "38.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 288,
+          "y": 807
+        }
+      ]
+    },
+    {
+      "file": "39.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 261,
+          "y": 427
+        }
+      ]
+    },
+    {
+      "file": "40.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 274,
+          "y": 405
+        }
+      ]
+    },
+    {
+      "file": "41.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 267,
+          "y": 360
+        }
+      ]
+    },
+    {
+      "file": "42.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 261,
+          "y": 456
+        }
+      ]
+    },
+    {
+      "file": "43.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 258,
+          "y": 514
+        }
+      ]
+    },
+    {
+      "file": "44.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 272,
+          "y": 816
+        }
+      ]
+    },
+    {
+      "file": "45.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 259,
+          "y": 463
+        }
+      ]
+    },
+    {
+      "file": "46.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 277,
+          "y": 397
+        }
+      ]
+    },
+    {
+      "file": "47.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 149,
+          "y": 501
+        },
+        {
+          "type": "tap",
+          "x": 272,
+          "y": 678
+        }
+      ]
+    },
+    {
+      "file": "48.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 299,
+          "y": 464
+        }
+      ]
+    },
+    {
+      "file": "49.png",
+      "actions": [
+        {
+          "type": "text",
+          "label": "CITY NAME",
+          "x": 188,
+          "y": 346
+        },
+        {
+          "type": "tap",
+          "x": 265,
+          "y": 725
+        }
+      ]
+    },
+    {
+      "file": "50.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 104,
+          "y": 344
+        }
+      ]
+    },
+    {
+      "file": "51.png",
+      "actions": [
+        {
+          "type": "text",
+          "label": "JOB",
+          "x": 141,
+          "y": 141
+        },
+        {
+          "type": "tap",
+          "x": 493,
+          "y": 921
+        }
+      ]
+    },
+    {
+      "file": "52.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 123,
+          "y": 469
+        }
+      ]
+    },
+    {
+      "file": "53.png",
+      "actions": [
+        {
+          "type": "text",
+          "label": "COMPANY",
+          "x": 141,
+          "y": 130
+        },
+        {
+          "type": "tap",
+          "x": 496,
+          "y": 929
+        }
+      ]
+    },
+    {
+      "file": "54.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 262,
+          "y": 728
+        }
+      ]
+    },
+    {
+      "file": "55.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 215,
+          "y": 349
+        },
+        {
+          "type": "tap",
+          "x": 360,
+          "y": 351
+        },
+        {
+          "type": "tap",
+          "x": 353,
+          "y": 508
+        },
+        {
+          "type": "tap",
+          "x": 265,
+          "y": 721
+        }
+      ]
+    },
+    {
+      "file": "56.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 475,
+          "y": 388
+        },
+        {
+          "type": "tap",
+          "x": 266,
+          "y": 816
+        }
+      ]
+    },
+    {
+      "file": "57.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 475,
+          "y": 388
+        },
+        {
+          "type": "tap",
+          "x": 270,
+          "y": 810
+        }
+      ]
+    },
+    {
+      "file": "58.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 222,
+          "y": 404
+        }
+      ]
+    },
+    {
+      "file": "59.png",
+      "actions": [
+        {
+          "type": "text",
+          "label": "BIO",
+          "x": 160,
+          "y": 311
+        },
+        {
+          "type": "tap",
+          "x": 497,
+          "y": 920
+        }
+      ]
+    },
+    {
+      "file": "60.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 272,
+          "y": 508
+        }
+      ]
+    },
+    {
+      "file": "61.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 240,
+          "y": 556
+        }
+      ]
+    },
+    {
+      "file": "62.png",
+      "actions": [
+        {
+          "type": "text",
+          "label": "BIO",
+          "x": 218,
+          "y": 266
+        },
+        {
+          "type": "tap",
+          "x": 496,
+          "y": 925
+        }
+      ]
+    },
+    {
+      "file": "63.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 267,
+          "y": 792
+        }
+      ]
+    },
+    {
+      "file": "64.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 280,
+          "y": 820
+        }
+      ]
+    },
+    {
+      "file": "65.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 292,
+          "y": 839
+        }
+      ]
+    },
+    {
+      "file": "66.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 250,
+          "y": 789
+        }
+      ]
+    },
+    {
+      "file": "67.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 281,
+          "y": 854
+        }
+      ]
+    },
+    {
+      "file": "68.png",
+      "actions": [
+        {
+          "type": "text",
+          "label": "PHONE NUMBER",
+          "x": 217,
+          "y": 300
+        },
+        {
+          "type": "tap",
+          "x": 299,
+          "y": 574
+        }
+      ]
+    },
+    {
+      "file": "69.png",
+      "actions": [
+        {
+          "type": "text",
+          "label": "SMS CODE",
+          "x": 141,
+          "y": 403
+        },
+        {
+          "type": "tap",
+          "x": 489,
+          "y": 909
+        }
+      ]
+    },
+    {
+      "file": "70.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 252,
+          "y": 739
+        }
+      ]
+    },
+    {
+      "file": "71.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 263,
+          "y": 500
+        }
+      ]
+    },
+    {
+      "file": "72.png",
+      "actions": [
+        {
+          "type": "swipe",
+          "direction": "BOTTOM_TO_TOP",
+          "x": 263,
+          "y": 637
+        }
+      ]
+    },
+    {
+      "file": "73.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 285,
+          "y": 739
+        }
+      ]
+    },
+    {
+      "file": "74.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 439,
+          "y": 448
+        },
+        {
+          "type": "tap",
+          "x": 458,
+          "y": 549
+        },
+        {
+          "type": "tap",
+          "x": 472,
+          "y": 619
+        },
+        {
+          "type": "tap",
+          "x": 409,
+          "y": 814
+        }
+      ]
+    },
+    {
+      "file": "75.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 295,
+          "y": 726
+        }
+      ]
+    },
+    {
+      "file": "76.png",
+      "actions": [
+        {
+          "type": "tap",
+          "x": 274,
+          "y": 891
+        }
+      ]
+    }
+  ]
+}

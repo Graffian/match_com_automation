@@ -1,0 +1,5 @@
+email,password,first_name,phone,birthday,zip,about_me,job,company,gender,looking_for
+alice.test@temp.com,AutoGen123!@#,Alice,,06151997,40201,I love hiking and trying new restaurants.,Marketing Coordinator,Lexington Media,female,men
+bella.test@temp.com,AutoGen456!@#,Bella,,08221997,40202,Enjoys reading and weekend yoga.,Graphic Designer,Creative Studios,female,men
+chloe.test@temp.com,AutoGen789!@#,Chloe,,11031997,40203,Foodie and coffee enthusiast.,Registered Nurse,City Hospital,female,men
+diana.test@temp.com,AutoGen012!@#,Diana,,04181997,40204,Love traveling and photography.,Software Engineer,Tech Solutions,female,men

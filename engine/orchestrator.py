@@ -80,7 +80,7 @@ class Orchestrator:
         # 2. Assign proxies to devices
         proxies = self.proxy_manager.assign_to_devices(len(devices))
         for dev, proxy in zip(devices, proxies):
-            self.device_manager.assign_proxy(dev.device_id, proxy)
+            self.device_manager.assign_proxy(dev.pad_code, proxy)
 
         # 3. Generate profiles
         total_accounts = len(devices) * self.accounts_per_device
@@ -168,11 +168,11 @@ class Orchestrator:
             self.device_manager.create_pool(to_create)
 
         devices = list(self.device_manager.all_devices)
-        device_ids = [d.device_id for d in devices]
+        pad_codes = [d.pad_code for d in devices]
 
-        self.device_manager.boot_pool(device_ids)
+        self.device_manager.boot_pool(pad_codes)
 
-        ready = [d for d in devices if d.status == "running" and d.adb_connected]
+        ready = [d for d in devices if d.status == "running"]
         logger.info("%d/%d devices ready", len(ready), self.device_count)
         return ready[:self.device_count]
 

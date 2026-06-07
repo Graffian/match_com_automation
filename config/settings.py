@@ -23,6 +23,7 @@ class Config:
         self.MATCH_APP_ACTIVITY = os.getenv("MATCH_APP_ACTIVITY", "com.match.android.activity.StartActivity")
 
         # SMS service
+        self.SMS_PROVIDER = os.getenv("SMS_PROVIDER", "getatext")
         self.SMS_API_KEY = os.getenv("SMS_API_KEY", "")
         self.SMS_SERVICE = os.getenv("SMS_SERVICE", "match")
         self.SMS_COUNTRY = os.getenv("SMS_COUNTRY", "us")
@@ -30,6 +31,10 @@ class Config:
         # Proxy
         self.PROXY_FILE = os.getenv("PROXY_FILE", str(BASE_DIR / "config" / "proxies.txt"))
         self.PROXY_ROTATION = os.getenv("PROXY_ROTATION", "round_robin")
+
+        # VMOS Dashboard
+        self.VMOS_DASHBOARD_EMAIL = os.getenv("VMOS_DASHBOARD_EMAIL", "")
+        self.VMOS_DASHBOARD_PASSWORD = os.getenv("VMOS_DASHBOARD_PASSWORD", "")
 
         self.ACCOUNTS_DB = str(BASE_DIR / "data" / "accounts.db")
 

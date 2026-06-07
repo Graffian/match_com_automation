@@ -35,7 +35,7 @@ class DeviceWorker:
         self.sms_client = sms_client
         self.driver: Optional[webdriver.Remote] = None
         self.account: Optional[Account] = None
-        self.logger = get_device_logger(device.device_id)
+        self.logger = get_device_logger(device.pad_code)
         self._stop_event = threading.Event()
 
     def stop(self):
@@ -43,11 +43,8 @@ class DeviceWorker:
 
     def run(self) -> Optional[Account]:
         """Execute the full signup flow on this device."""
-        self.logger.info(
-            "Worker starting for %s on device %s",
-            self.profile.get("email"),
-            self.device.name,
-        )
+        self.logger.info("Starting %s on %s",
+                         self.profile.get("email"), self.device.name)
 
         try:
             self._create_account_record()
@@ -103,7 +100,7 @@ class DeviceWorker:
             zip_code=self.profile.get("zip_code", ""),
             phone=self.profile.get("phone", ""),
             status=AccountStatus.PENDING,
-            device_id=self.device.device_id,
+            device_id=self.device.pad_code,
             proxy=self.device.proxy,
         )
         self.store.insert(self.account)

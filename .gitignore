@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+.env.local
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Project runtime
+folder_index.txt
+*.log
+screenshots/_rerecord2/
+
+# VMOS
+devices.json
+
+# Config
+config/proxies.txt
+config/profiles.csv

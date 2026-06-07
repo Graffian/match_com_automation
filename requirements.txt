@@ -1,15 +1,3 @@
-# Core
 requests>=2.31.0
-
-# Appium / Selenium
-Appium-Python-Client>=4.0.0
 selenium>=4.15.0
-
-# Utilities
-python-dotenv>=1.0.0
-
-# Optional: for SMS integration
-# requests[socks]  # if using SOCKS proxies
-
-# Optional: for headless screenshots in reports
-# Pillow>=10.0.0
+Pillow>=10.0.0

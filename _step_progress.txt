@@ -1,0 +1,8 @@
+step=7
+file=05.png
+type=text
+x=160
+y=629
+label={ZIP}
+direction=
+seconds=
