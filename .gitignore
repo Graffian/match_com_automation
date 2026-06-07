@@ -27,8 +27,7 @@ folder_index.txt
 *.log
 screenshots/_rerecord2/
 
-# VMOS
-devices.json
+
 
 # Config
 config/proxies.txt
