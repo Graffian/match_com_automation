@@ -57,12 +57,12 @@ portal.anyip.io:1080:user_dd4d7d,...session_020:bosstest12
 
 *If you must run with fewer, the script assigns them round-robin (phones 1-3 → proxy 1, phones 4-6 → proxy 2, etc.).*
 
-## 6. Photos — Place in `D:/match_photos/`
+## 6. Photos — Place in `C:/match_photos/`
 
-Create folders at `D:/match_photos/` — each folder should contain 6 photos:
+Create folders at `C:/match_photos/` — each folder should contain 6 photos:
 
 ```
-D:/match_photos/
+C:/match_photos/
 ├── batch_001/   ← 6 photos for phone 1
 │   ├── 1.jpg
 │   ├── 2.jpg
@@ -82,7 +82,7 @@ python run_all.py
 
 On first launch it will:
 - Open Chrome headless → log into VMOS dashboard → scrape all pad codes → save to `devices.json`
-- Upload photos from `D:/match_photos/` to each device via catbox
+- Upload photos from `C:/match_photos/` to each device via catbox
 - Generate fresh profiles (Mailinator emails, fake names/dates)
 - Assign 1 proxy per phone via smartIp (restarts each device, ~5-30s per phone)
 - Wait for all devices to come back online
