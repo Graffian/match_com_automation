@@ -1,8 +1,0 @@
-portal.anyip.io:1080:user_dd4d7d,type_mobile,country_US,region_kentucky,session_b9a8513a:bosstest12
-portal.anyip.io:1080:user_dd4d7d,type_mobile,country_US,region_kentucky,session_89c6f038:bosstest12
-portal.anyip.io:1080:user_dd4d7d,type_mobile,country_US,region_kentucky,session_5c1203b0:bosstest12
-portal.anyip.io:1080:user_dd4d7d,type_mobile,country_US,region_kentucky,session_c8acdad6:bosstest12
-portal.anyip.io:1080:user_dd4d7d,type_mobile,country_US,region_kentucky,session_724e0d4d:bosstest12
-portal.anyip.io:1080:user_dd4d7d,type_mobile,country_US,region_kentucky,session_689ca4d2:bosstest12
-portal.anyip.io:1080:user_dd4d7d,type_mobile,country_US,region_kentucky,session_14bd27d0:bosstest12
-portal.anyip.io:1080:user_dd4d7d,type_mobile,country_US,region_kentucky,session_37be8adc:bosstest12
