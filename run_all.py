@@ -141,25 +141,27 @@ def generate_profiles(count: int) -> list[dict]:
 
 
 def upload_photos(api, pad_code: str, folder: Path,
-                  catbox_proxy: str = None) -> None:
-    import requests
+                  upload_proxy: str = None) -> None:
+    import requests, base64
     photos = sorted(folder.glob("*.jpg")) + sorted(folder.glob("*.png"))
     photos = photos[:PHOTOS_PER_DEVICE]
     if not photos:
         logger.warning("[%s] No photos in %s", pad_code, folder.name)
         return
-    proxies = {"http": catbox_proxy, "https": catbox_proxy} if catbox_proxy else None
+    IMGBB_KEY = "2ec9740f37ae25e95fb2a2ddde5d8a2e"
+    proxies = {"http": upload_proxy, "https": upload_proxy} if upload_proxy else None
     for j, path in enumerate(photos):
         try:
-            resp = requests.post("https://catbox.moe/user/api.php",
-                                 data={"reqtype": "fileupload"},
-                                 files={"fileToUpload": open(path, "rb")},
+            b64 = base64.b64encode(path.read_bytes()).decode()
+            resp = requests.post("https://api.imgbb.com/1/upload",
+                                 data={"key": IMGBB_KEY, "image": b64},
                                  proxies=proxies,
                                  timeout=60)
             if resp.status_code != 200:
-                logger.error("[%s] catbox failed: %s", pad_code, resp.text[:100])
+                logger.error("[%s] imgbb failed: %s", pad_code, resp.text[:200])
                 continue
-            api.upload_file_v3(pad_code, resp.text.strip(),
+            url = resp.json()["data"]["url"]
+            api.upload_file_v3(pad_code, url,
                                file_name=f"photo_{j+1}.jpg",
                                file_path="/Pictures/")
         except Exception as e:
@@ -322,20 +324,20 @@ def cycle(t0):
         logger.error("No pad codes — aborting cycle")
         return False
 
-    catbox_pm = ProxyManager(str(PROXY_FILE))
-    if catbox_pm.proxies:
-        p = catbox_pm.proxies[0].split(":", 3)
-        catbox_proxy = f"http://{p[2]}:{p[3]}@{p[0]}:{p[1]}"
-        logger.info("Using proxy for catbox uploads: %s:%s", p[0], p[1])
+    upload_pm = ProxyManager(str(PROXY_FILE))
+    if upload_pm.proxies:
+        p = upload_pm.proxies[0].split(":", 3)
+        upload_proxy = f"http://{p[2]}:{p[3]}@{p[0]}:{p[1]}"
+        logger.info("Using proxy for imgbb uploads: %s:%s", p[0], p[1])
     else:
-        catbox_proxy = None
-        logger.warning("No proxies available — catbox will connect directly")
+        upload_proxy = None
+        logger.warning("No proxies available — imgbb will connect directly")
 
     folders = get_next_photo_folders(len(codes))
     if folders:
         for pc, folder in zip(codes, folders):
             logger.info("[%s] Uploading photos from %s", pc, folder.name)
-            upload_photos(api, pc, folder, catbox_proxy=catbox_proxy)
+            upload_photos(api, pc, folder, upload_proxy=upload_proxy)
     else:
         logger.warning("Skipping photo upload")
 

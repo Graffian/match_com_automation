@@ -82,7 +82,7 @@ python run_all.py
 
 On first launch it will:
 - Open Chrome headless → log into VMOS dashboard → scrape all pad codes → save to `devices.json`
-- Upload photos from `C:/match_photos/` to each device via catbox
+- Upload photos from `C:/match_photos/` to each device via imgbb
 - Generate fresh profiles (Mailinator emails, fake names/dates)
 - Assign 1 proxy per phone via smartIp (restarts each device, ~5-30s per phone)
 - Wait for all devices to come back online
@@ -94,7 +94,7 @@ On first launch it will:
 
 | Step | Details | Est. Duration |
 |------|---------|---------------|
-| Photo upload | 120 photos via catbox → `/sdcard/Pictures/` on each device | ~3-5 min |
+| Photo upload | 120 photos via imgbb → `/sdcard/Pictures/` on each device | ~3-5 min |
 | Profile generation | 20 fresh Mailinator emails + names, all random | ~1s |
 | Proxy assignment | smartIp on 20 devices (sequential, ~5-30s each) | ~3-5 min |
 | Device recovery | Wait for all 20 phones to come back online after restart | ~2 min |
@@ -109,7 +109,7 @@ On first launch it will:
 - **Burst execution:** All 20 phones fire each step simultaneously. 10-second delay between steps keeps them roughly in sync.
 - **Desync is normal:** VMOS queue delays cause some phones to lag. The next 50-min cycle resets all devices cleanly.
 - **SMS polling:** GetAText is polled at 6-second intervals (respects 10 req/min rate limit). Expect ~2 minutes to collect all 20 codes.
-- **Photo uploads:** 120 catbox uploads per cycle. If catbox fails, retry next cycle.
+- **Photo uploads:** 120 imgbb uploads per cycle. If imgbb fails, retry next cycle.
 
 ## 10. Important Notes
 
