@@ -358,9 +358,6 @@ def cycle(t0):
 
     pm = ProxyManager(str(PROXY_FILE))
     proxies = pm.assign_to_devices(len(codes))
-    proxy_host = "portal.anyip.io"
-    proxy_port = 1080
-    proxy_ip = socket.gethostbyname(proxy_host)
 
     for i, a in enumerate(autos):
         pr = proxies[i]
@@ -369,6 +366,9 @@ def cycle(t0):
             continue
 
         parts = pr.split(":", 3)
+        proxy_host = parts[0]
+        proxy_port = int(parts[1])
+        proxy_ip = socket.gethostbyname(proxy_host)
         userpart = parts[2]
         password = parts[3]
         session = userpart.split("session_")[1].split(",")[0] if "session_" in userpart else "?"
@@ -378,7 +378,7 @@ def cycle(t0):
         try:
             ck = a.client.check_ip(host=proxy_ip, port=proxy_port,
                                    username=userpart, password=password,
-                                   proxy_type="http")
+                                   proxy_type="socks5")
             if not ck.get("proxyWorking"):
                 logger.warning("[%s] Proxy check failed, skipping", a.pad_code)
                 time.sleep(5)
@@ -394,7 +394,7 @@ def cycle(t0):
             a.client.set_smart_ip(
                 pad_codes=[a.pad_code], host=proxy_ip, port=proxy_port,
                 username=userpart, password=password,
-                proxy_type="http", mode="proxy"
+                proxy_type="socks5", mode="proxy"
             )
             logger.info("[%s] smartIp queued", a.pad_code)
         except Exception as e:

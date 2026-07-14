@@ -41,18 +41,18 @@ def configure_device(api, pad: str, proxy_str: str) -> bool:
         return False
 
     parts = proxy_str.split(":", 3)
+    host = socket.gethostbyname(parts[0])
+    port = int(parts[1])
     userpart = parts[2]
     password = parts[3]
     session = userpart.split("session_")[1].split(",")[0] if "session_" in userpart else "?"
-    host = socket.gethostbyname("portal.anyip.io")
-    port = 1080
 
     logger.info("[%s] Assigning proxy session_%s via smartIp...", pad, session)
 
     # 1. Validate proxy
     try:
         ck = api.check_ip(host=host, port=port, username=userpart,
-                          password=password, proxy_type="http")
+                          password=password, proxy_type="socks5")
         if not ck.get("proxyWorking"):
             logger.error("[%s] Proxy check failed!", pad)
             return False
@@ -73,7 +73,7 @@ def configure_device(api, pad: str, proxy_str: str) -> bool:
         task = api.set_smart_ip(
             pad_codes=[pad], host=host, port=port,
             username=userpart, password=password,
-            proxy_type="http", mode="proxy"
+            proxy_type="socks5", mode="proxy"
         )
         logger.info("  [%s] smartIp task: %s", pad, task)
     except Exception as e:
