@@ -52,7 +52,7 @@ def configure_device(api, pad: str, proxy_str: str) -> bool:
     # 1. Validate proxy
     try:
         ck = api.check_ip(host=host, port=port, username=userpart,
-                          password=password, proxy_type="socks5")
+                          password=password, proxy_type="http")
         if not ck.get("proxyWorking"):
             logger.error("[%s] Proxy check failed!", pad)
             return False
@@ -73,7 +73,7 @@ def configure_device(api, pad: str, proxy_str: str) -> bool:
         task = api.set_smart_ip(
             pad_codes=[pad], host=host, port=port,
             username=userpart, password=password,
-            proxy_type="socks5", mode="proxy"
+            proxy_type="http", mode="proxy"
         )
         logger.info("  [%s] smartIp task: %s", pad, task)
     except Exception as e:

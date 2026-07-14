@@ -378,7 +378,7 @@ def cycle(t0):
         try:
             ck = a.client.check_ip(host=proxy_ip, port=proxy_port,
                                    username=userpart, password=password,
-                                   proxy_type="socks5")
+                                   proxy_type="http")
             if not ck.get("proxyWorking"):
                 logger.warning("[%s] Proxy check failed, skipping", a.pad_code)
                 time.sleep(5)
@@ -394,7 +394,7 @@ def cycle(t0):
             a.client.set_smart_ip(
                 pad_codes=[a.pad_code], host=proxy_ip, port=proxy_port,
                 username=userpart, password=password,
-                proxy_type="socks5", mode="proxy"
+                proxy_type="http", mode="proxy"
             )
             logger.info("[%s] smartIp queued", a.pad_code)
         except Exception as e:
