@@ -29,8 +29,6 @@ class VMOSClient:
         return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
     FILE_UPLOAD_PATHS = {
-        "/vcpcloud/api/padApi/uploadFile",
-        "/vcpcloud/api/padApi/uploadFileV3",
         "/vcpcloud/api/padApi/asyncCmd",
         "/vcpcloud/api/padApi/syncCmd",
     }
