@@ -140,18 +140,21 @@ def generate_profiles(count: int) -> list[dict]:
     return profiles
 
 
-def upload_photos(api, pad_code: str, folder: Path) -> None:
+def upload_photos(api, pad_code: str, folder: Path,
+                  catbox_proxy: str = None) -> None:
     import requests
     photos = sorted(folder.glob("*.jpg")) + sorted(folder.glob("*.png"))
     photos = photos[:PHOTOS_PER_DEVICE]
     if not photos:
         logger.warning("[%s] No photos in %s", pad_code, folder.name)
         return
+    proxies = {"http": catbox_proxy, "https": catbox_proxy} if catbox_proxy else None
     for j, path in enumerate(photos):
         try:
             resp = requests.post("https://catbox.moe/user/api.php",
                                  data={"reqtype": "fileupload"},
                                  files={"fileToUpload": open(path, "rb")},
+                                 proxies=proxies,
                                  timeout=60)
             if resp.status_code != 200:
                 logger.error("[%s] catbox failed: %s", pad_code, resp.text[:100])
@@ -319,11 +322,20 @@ def cycle(t0):
         logger.error("No pad codes — aborting cycle")
         return False
 
+    catbox_pm = ProxyManager(str(PROXY_FILE))
+    if catbox_pm.proxies:
+        p = catbox_pm.proxies[0].split(":", 3)
+        catbox_proxy = f"http://{p[2]}:{p[3]}@{p[0]}:{p[1]}"
+        logger.info("Using proxy for catbox uploads: %s:%s", p[0], p[1])
+    else:
+        catbox_proxy = None
+        logger.warning("No proxies available — catbox will connect directly")
+
     folders = get_next_photo_folders(len(codes))
     if folders:
         for pc, folder in zip(codes, folders):
             logger.info("[%s] Uploading photos from %s", pc, folder.name)
-            upload_photos(api, pc, folder)
+            upload_photos(api, pc, folder, catbox_proxy=catbox_proxy)
     else:
         logger.warning("Skipping photo upload")
 
