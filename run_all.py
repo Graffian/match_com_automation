@@ -110,8 +110,20 @@ def generate_profiles(count: int) -> list[dict]:
     profiles = []
     used_emails = set()
     for i in range(count):
-        name = random.choice(GIRL_NAMES)
-        bday = random.choice(BIRTHDAYS)
+        if i == 0:
+            name = "Catherine"
+            bday = "06151983"
+            zipc = "76102"
+            city_name = "Fort Worth"
+            city_state = "Fort Worth TX"
+            city_full = "Fort Worth, Fort Worth TX"
+        else:
+            name = random.choice(GIRL_NAMES)
+            bday = random.choice(BIRTHDAYS)
+            zipc = "40202"
+            city_name = "Louisville"
+            city_state = "Louisville KY"
+            city_full = "Louisville, Louisville KY"
         about = random.choice(ABOUT_ME)
         job = random.choice(JOBS)
         company = random.choice(COMPANIES)
@@ -127,10 +139,10 @@ def generate_profiles(count: int) -> list[dict]:
             "first_name": name,
             "phone": "",
             "birthday": bday,
-            "zip": "40202",
-            "city_name": "Louisville",
-            "city_state": "Louisville KY",
-            "city_full": "Louisville, Louisville KY",
+            "zip": zipc,
+            "city_name": city_name,
+            "city_state": city_state,
+            "city_full": city_full,
             "about_me": about,
             "job": job,
             "company": company,
