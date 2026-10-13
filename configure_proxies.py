@@ -45,9 +45,14 @@ def configure_device(api, pad: str, proxy_str: str) -> bool:
     port = int(parts[1])
     userpart = parts[2]
     password = parts[3]
-    session = userpart.split("session_")[1].split(",")[0] if "session_" in userpart else "?"
+    if "sid-" in userpart:
+        session = userpart.split("sid-")[1].split("-")[0]
+    elif "session_" in userpart:
+        session = userpart.split("session_")[1].split(",")[0]
+    else:
+        session = "?"
 
-    logger.info("[%s] Assigning proxy session_%s via smartIp...", pad, session)
+    logger.info("[%s] Assigning proxy session %s via smartIp...", pad, session)
 
     # 1. Validate proxy
     try:

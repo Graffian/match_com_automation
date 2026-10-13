@@ -373,9 +373,14 @@ def cycle(t0):
         proxy_ip = socket.gethostbyname(proxy_host)
         userpart = parts[2]
         password = parts[3]
-        session = userpart.split("session_")[1].split(",")[0] if "session_" in userpart else "?"
+        if "sid-" in userpart:
+            session = userpart.split("sid-")[1].split("-")[0]
+        elif "session_" in userpart:
+            session = userpart.split("session_")[1].split(",")[0]
+        else:
+            session = "?"
 
-        logger.info("[%s] Setting proxy session_%s via smartIp...", a.pad_code, session)
+        logger.info("[%s] Setting proxy session %s via smartIp...", a.pad_code, session)
 
         try:
             ck = a.client.check_ip(host=proxy_ip, port=proxy_port,
